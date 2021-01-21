@@ -45,7 +45,6 @@ class MainViewModel(private val repo: Repository) : BaseViewModel() {
         navigateToDetail.value = itemSelected
     }
 
-
     private fun filterData() {
         if (searchText.isEmpty()) {
             resetList()

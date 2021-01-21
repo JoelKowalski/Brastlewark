@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">BrastlewarkMobileTest</string>
+    <string name="detail_title">Gnome Description</string>
 </resources>

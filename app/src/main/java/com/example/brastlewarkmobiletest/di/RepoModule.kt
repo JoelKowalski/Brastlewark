@@ -18,7 +18,7 @@ import java.util.concurrent.TimeUnit
 
 
 val appModules = module {
-    // The Retrofit service using our custom HTTP client instance as a singleton
+
     single {
         createWebService<GnomeApi>(
             okHttpClient = createHttpClient(),

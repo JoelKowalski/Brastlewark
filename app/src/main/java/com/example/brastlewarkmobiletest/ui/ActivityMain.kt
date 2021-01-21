@@ -53,7 +53,7 @@ class ActivityMain: AppCompatActivity() {
         viewModel.showError.observe(this, Observer { showError ->
             Toast.makeText(this, showError, Toast.LENGTH_SHORT).show()
         })
-        // Navigate to detail view with the img's url to display
+
         viewModel.navigateToDetail.observe(this, Observer { itemSelected ->
             if (itemSelected != null) startActivity(DetailActivity.getStartIntent(this, itemSelected))
         })

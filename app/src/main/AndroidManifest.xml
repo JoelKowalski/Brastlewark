@@ -24,6 +24,7 @@
         </activity>
 
         <activity
+            android:label="@string/detail_title"
             android:name=".ui.DetailActivity"
             android:parentActivityName=".ui.ActivityMain" />
     </application>
