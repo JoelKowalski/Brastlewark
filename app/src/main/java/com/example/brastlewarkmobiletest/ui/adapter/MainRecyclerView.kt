@@ -1,14 +1,17 @@
 package com.example.brastlewarkmobiletest.ui.adapter
 
+import android.graphics.BitmapFactory
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.brastlewarkmobiletest.R
 import com.example.brastlewarkmobiletest.data.model.GnomeEntity
-import com.example.brastlewarkmobiletest.helper.loadImage
 import kotlinx.android.synthetic.main.item_list_view_gnome.view.*
+import java.net.URL
 import kotlin.properties.Delegates
+
 
 class MainRecyclerView(private val listener: (itemSelected: GnomeEntity) -> Unit) :
     RecyclerView.Adapter<MainRecyclerView.GnomeViewHolder>() {
@@ -48,7 +51,13 @@ class MainRecyclerView(private val listener: (itemSelected: GnomeEntity) -> Unit
         fun bind(gnome: GnomeEntity) {
             itemView.card_view_image_name.text = gnome.name
             itemView.card_view_image_age.text = gnome.age.toString()
-            itemView.card_view_image.loadImage(gnome.image)
+
+            Glide.with(itemView.card_view_image)
+                .load(gnome.image)
+                .placeholder(R.drawable.placeholder)
+                .into(itemView.card_view_image)
+
+
         }
     }
 }
