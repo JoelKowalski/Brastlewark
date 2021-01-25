@@ -13,10 +13,9 @@
             <ImageView
                 android:id="@+id/detail_view_image"
                 android:layout_width="wrap_content"
-                android:src="@drawable/image"
-                android:layout_height="wrap_content"
+                android:layout_height="300dp"
                 android:layout_gravity="center"
-                android:scaleType="fitCenter"/>
+                android:scaleType="center"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

@@ -22,6 +22,7 @@ class ActivityMain: AppCompatActivity() {
     private lateinit var gnomeAdapter: MainRecyclerView
     private lateinit var searchView: SearchView
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)

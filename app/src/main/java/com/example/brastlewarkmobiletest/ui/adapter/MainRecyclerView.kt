@@ -6,8 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.model.GlideUrl
+import com.bumptech.glide.load.model.LazyHeaders
 import com.example.brastlewarkmobiletest.R
 import com.example.brastlewarkmobiletest.data.model.GnomeEntity
+import com.example.brastlewarkmobiletest.utils.loadImage
 import kotlinx.android.synthetic.main.item_list_view_gnome.view.*
 import java.net.URL
 import kotlin.properties.Delegates
@@ -51,13 +54,7 @@ class MainRecyclerView(private val listener: (itemSelected: GnomeEntity) -> Unit
         fun bind(gnome: GnomeEntity) {
             itemView.card_view_image_name.text = gnome.name
             itemView.card_view_image_age.text = gnome.age.toString()
-
-            Glide.with(itemView.card_view_image)
-                .load(gnome.image)
-                .placeholder(R.drawable.placeholder)
-                .into(itemView.card_view_image)
-
-
+            itemView.card_view_image.loadImage(gnome.image)
         }
     }
 }
