@@ -10,6 +10,7 @@ import com.example.brastlewarkmobiletest.data.model.GnomeEntity
 import com.example.brastlewarkmobiletest.ui.adapter.FriendsRecyclerView
 import com.example.brastlewarkmobiletest.utils.Constants
 import com.example.brastlewarkmobiletest.utils.Constants.Companion.EXTRA_GNOME_BUNDLE
+import com.example.brastlewarkmobiletest.utils.loadImage
 import kotlinx.android.synthetic.main.activity_detail.*
 
 
@@ -46,7 +47,7 @@ class DetailActivity : AppCompatActivity() {
         detail_view_name.text = gnomeSelected.name
         detail_view_weight.text = gnomeSelected.weight.toString()
         detail_view_height.text = gnomeSelected.height.toString()
-
         detail_view_gender.text = if(gnomeSelected.age%2==0) "Male" else "Female"
+        detail_view_image.loadImage(gnomeSelected.image)
     }
 }
