@@ -3,10 +3,8 @@ package com.example.brastlewarkmobiletest.viewModel
 import androidx.lifecycle.MutableLiveData
 import com.example.brastlewarkmobiletest.data.model.GnomeEntity
 import com.example.brastlewarkmobiletest.data.repo.Repository
-import com.example.brastlewarkmobiletest.ui.adapter.MainRecyclerView
 import com.example.brastlewarkmobiletest.utils.SingleLiveEvent
 import com.example.brastlewarkmobiletest.utils.StateResult
-import com.example.brastlewarkmobiletest.viewModel.BaseViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext

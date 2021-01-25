@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.model.GlideUrl
+import com.bumptech.glide.load.model.LazyHeaders
 import com.example.brastlewarkmobiletest.R
 import com.example.brastlewarkmobiletest.data.model.GnomeEntity
 import kotlinx.android.synthetic.main.item_list_view_gnome.view.*
@@ -51,9 +53,17 @@ class MainRecyclerView(private val listener: (itemSelected: GnomeEntity) -> Unit
         fun bind(gnome: GnomeEntity) {
             itemView.card_view_image_name.text = gnome.name
             itemView.card_view_image_age.text = gnome.age.toString()
+            val image = gnome.image.replace("http://", "https://")
 
+
+
+            val imageUrl = GlideUrl(
+                image, LazyHeaders.Builder()
+                    .addHeader("User-Agent", System.getProperty("http.agent"))
+                    .build()
+            )
             Glide.with(itemView.card_view_image)
-                .load(gnome.image)
+                .load(imageUrl)
                 .placeholder(R.drawable.placeholder)
                 .into(itemView.card_view_image)
 
