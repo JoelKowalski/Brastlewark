@@ -26,7 +26,9 @@ class ActivityMain: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         initRecycleView()
+        packageName
         initViewModel()
+
     }
 
     private fun initRecycleView(){
